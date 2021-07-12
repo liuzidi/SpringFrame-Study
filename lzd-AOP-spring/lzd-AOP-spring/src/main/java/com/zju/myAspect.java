@@ -2,11 +2,7 @@ package com.zju;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-
+import org.aspectj.lang.annotation.*;
 
 
 @Aspect
@@ -43,5 +39,13 @@ public class myAspect {
         res = pjp.proceed();
         System.out.println("环绕后");
         return res;
+    }
+    /**
+     *
+     */
+    @AfterThrowing(value="execution(* *.doSome(..))",throwing = "e")
+    public void doAfterThrowing(Exception e){
+        System.out.println("doAfterThrowing方法被调用了");
+        System.out.println("异常是" + e);
     }
 }
