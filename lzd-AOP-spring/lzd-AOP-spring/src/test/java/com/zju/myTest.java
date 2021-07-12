@@ -4,10 +4,7 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-/**
- * @author:liuzidi
- * @Description:
- */
+
 public class myTest {
     @Test
     public void test1(){
@@ -15,5 +12,6 @@ public class myTest {
         ApplicationContext ac = new ClassPathXmlApplicationContext(config);
         SomeService myService = (SomeService) ac.getBean("myService");
         myService.doSome();
+
     }
 }
