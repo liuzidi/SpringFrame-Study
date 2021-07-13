@@ -4,6 +4,11 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/lzd-AOP-spring/pom.xml" />
+        <option value="$PROJECT_DIR$/../lzd-hello-spring/lzd-hello-spring/lzd-hello-spring/pom.xml" />
+        <option value="$PROJECT_DIR$/../lzd-01-spring/lzd-01-spring/pom.xml" />
+        <option value="$PROJECT_DIR$/../lzd-hello-spring/pom.xml" />
+        <option value="$PROJECT_DIR$/../pom.xml" />
+        <option value="$PROJECT_DIR$/../lzd-mybatis01/pom.xml" />
       </list>
     </option>
   </component>

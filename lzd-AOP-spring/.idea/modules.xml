@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../lzd-01-spring/lzd-01-spring/lzd-01-spring.iml" filepath="$PROJECT_DIR$/../lzd-01-spring/lzd-01-spring/lzd-01-spring.iml" />
       <module fileurl="file://$PROJECT_DIR$/lzd-AOP-spring/lzd-AOP-spring.iml" filepath="$PROJECT_DIR$/lzd-AOP-spring/lzd-AOP-spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../lzd-hello-spring/lzd-hello-spring.iml" filepath="$PROJECT_DIR$/../lzd-hello-spring/lzd-hello-spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../lzd-mybatis01/lzd-mybatis01.iml" filepath="$PROJECT_DIR$/../lzd-mybatis01/lzd-mybatis01.iml" />
     </modules>
   </component>
 </project>

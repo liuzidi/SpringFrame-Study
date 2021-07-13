@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+指定约束文件 mybatis-3-mapper.dtd
+该文件用来限制检查mybatis中的标签，必须符合相关的要求
+-->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+mapper是当前目录的根标签
+namespace是命名空间的唯一值，要求使用dao接口的全限定名称
+<select>查询语句
+    1.id是要执行的sql语法的唯一标识，mybatis根据id的值来寻找到要执行的sql语句，即和dao接口中的方法名一致；
+    2.resultType:表示结果类型，是sql语句结果执行后的ResultSet，遍历这个ResultSet得到java对象的类型，值是类型的全限定名称
+<update>更新语句
+<insert>插入语句
+<delete>删除语句
+-->
+<mapper namespace="com.zju.dao.EmployeeDao">
+    <select id="selectEmployee" resultType="com.zju.entity.Employee">
+        select * from employee order by id
+    </select>
+</mapper>

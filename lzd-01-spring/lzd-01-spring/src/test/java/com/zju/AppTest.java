@@ -10,7 +10,7 @@ public class AppTest {
         String config = "applicationContext.xml";
         ApplicationContext ac = new ClassPathXmlApplicationContext(config);
 
-        Student student = (Student) ac.getBean("myStudent");
+        com.zju.Student student = (com.zju.Student) ac.getBean("myStudent");
         System.out.println(student);
 
 
