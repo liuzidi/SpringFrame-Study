@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!--
 指定约束文件 mybatis-3-mapper.dtd
 该文件用来限制检查mybatis中的标签，必须符合相关的要求
@@ -18,7 +18,10 @@ namespace是命名空间的唯一值，要求使用dao接口的全限定名称
 <delete>删除语句
 -->
 <mapper namespace="com.zju.dao.EmployeeDao">
-    <select id="selectEmployee" resultType="com.zju.entity.Employee">
-        select * from employee order by id
+    <select id="selectEmployees" resultType="com.zju.entity.Employee">
+        select * from employee where sex = '男'
     </select>
+    <insert id="insertEmployees" >
+        insert into employee values(#{id},#{name},#{sex},#{birthday},#{image})
+    </insert>
 </mapper>

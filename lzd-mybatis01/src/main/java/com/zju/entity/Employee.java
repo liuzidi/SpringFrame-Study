@@ -5,51 +5,22 @@ package com.zju.entity;
  * @Description:
  */
 public class Employee {
-    private Integer id;
     private String name;
     private String sex;
     private String birthday;
+    private Integer id;
     private String image;
-//
-//    public Integer getId() {
-//        return id;
-//    }
-//
-//    public void setId(Integer id) {
-//        this.id = id;
-//    }
-//
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-//
-//    public String getSex() {
-//        return sex;
-//    }
-//
-//    public void setSex(String sex) {
-//        this.sex = sex;
-//    }
-//
-//    public String getBirthday() {
-//        return birthday;
-//    }
-//
-//    public void setBirthday(String birthday) {
-//        this.birthday = birthday;
-//    }
-//
-//    public String getImage() {
-//        return image;
-//    }
-//
-//    public void setImage(String image) {
-//        this.image = image;
-//    }
+
+    public Employee() {
+    }
+
+    public Employee(String name, String sex, String birthday, Integer id, String image) {
+        this.name = name;
+        this.sex = sex;
+        this.birthday = birthday;
+        this.id = id;
+        this.image = image;
+    }
 
     @Override
     public String toString() {

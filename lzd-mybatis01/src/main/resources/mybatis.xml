@@ -4,11 +4,16 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+<!--    控制mybatis全局行为-->
+    <settings>
+<!--        控制mybatis日志-->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
 <!--
 环境配置：数据库的连接信息
 默认访问的数据库名称 default
 -->
-    <environments default="myDev01">
+    <environments default="myDev02">
 <!--        数据库信息的配置，环境，id自定义-->
 <!--        employee所在的数据库-->
         <environment id="myDev01">
@@ -25,7 +30,7 @@
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/db"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/db?characterEncoding=utf-8"/>
                 <property name="username" value="root"/>
                 <property name="password" value="1717"/>
             </dataSource>
