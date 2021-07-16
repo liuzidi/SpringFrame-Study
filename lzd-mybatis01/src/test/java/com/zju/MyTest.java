@@ -83,6 +83,7 @@ public class MyTest {
         /**
          * 采用传统方式进行
          */
+
 //        String sqlID = "com.zju.dao.EmployeeDao" + "." + "selectMapById";
 //        Map<Object, Object> map = sqlSession.selectMap(sqlID,"id");
         System.out.println(map);
