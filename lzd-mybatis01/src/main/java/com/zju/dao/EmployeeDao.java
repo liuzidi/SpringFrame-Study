@@ -3,21 +3,15 @@ package com.zju.dao;
 import com.zju.entity.Employee;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author:liuzidi
  * @Description:
  */
 public interface EmployeeDao {
-    public List<Employee> selectEmployees();
-
-    /**
-     *
-     * @param  employee
-     * @return 影响的行数
-     */
-    public int insertEmployees(Employee employee);
-
-
+    List<Employee> selectEmployees();
+    int insertEmployees(Employee employee);
+    Map<Object,Object> selectMapById(String sex);
 
 }
