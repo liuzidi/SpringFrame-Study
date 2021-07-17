@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="lzd.bankTransaction.dao.SaleListDao">
+    <resultMap id="saleList" type="lzd.bankTransaction.entity.SaleList">
+        <id property="id" column="id"/>
+        <result property="gid" column="gid"/>
+        <result property="saleNums" column="saleNums"/>
+        <result property="gName" column="gname"/>
+    </resultMap>
+
+    <insert id="addLog">
+        insert into salelist (gid,gname,saleNums)
+        values(#{gid},#{gname},#{saleNums})
+    </insert>
+
+    <select id="selectByID" resultMap="saleList">
+        select * from salelist where id = #{id}
+    </select>
+
+    <select id="selectAll" resultMap="saleList">
+        select * from salelist
+    </select>
+</mapper>

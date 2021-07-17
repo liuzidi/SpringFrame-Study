@@ -1,6 +1,0 @@
-com\zju\entity\Student.class
-com\zju\dao\MyStudentDao.class
-com\zju\dao\StudentDao.class
-com\zju\entity\MyStudent.class
-com\zju\service\impl\StudentServiceImpl.class
-com\zju\service\StudentService.class

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="lzd.bankTransaction.dao.RepoDao">
+    <resultMap id="repo" type="lzd.bankTransaction.entity.Repo">
+        <result property="gid" column="gid"/>
+        <result property="NowNums" column="nowNums"/>
+        <result property="gName" column="gname"/>
+    </resultMap>
+
+    <select id="selectNowNumsByGid" parameterType="int" resultType="int">
+        select nowNums from repo where gid = #{gid}
+    </select>
+
+    <update id="addNowNumsByGid">
+-- 多参数传参需要用注解
+        update repo set nowNums = (nownums + #{num}) where gid = #{gid}
+    </update>
+
+    <select id="selectAll" resultMap="repo">
+        select * from repo
+    </select>
+
+    <select id="selectByGid" resultMap="repo">
+        select * from repo where gid = #{gid}
+    </select>
+
+
+</mapper>

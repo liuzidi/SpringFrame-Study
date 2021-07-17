@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd">
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 <!--    声明数据源，通过IoP用来连接druid数据库连接池-->
     <bean id="myDatasource" class="com.alibaba.druid.pool.DruidDataSource"
@@ -30,11 +30,20 @@
             MapperScannerConfigurer会扫描这个包所有的接口，每个接口执行一次getMapper()方法得到dao对象，并存放在spring容器中
 得到的对象为接口的小写形式
 -->
-        <property name="basePackage" value="com.zju.dao"/>
+        <property name="basePackage" value="lzd.bankTransaction.dao"/>
     </bean>
 
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+<!--        连接数据库 指定数据源-->
+        <property name="dataSource" ref="myDatasource" />
+    </bean>
+
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+
 <!--    自定义Bean-->
-    <bean id="studentService" class="com.zju.service.impl.StudentServiceImpl">
-        <property name="studentDao" ref="studentDao"/>
+    <bean id="shopService" class="lzd.bankTransaction.service.impl.ShopServiceImpl">
+        <property name="repoDao" ref="repoDao"/>
+        <property name="saleListDao" ref="saleListDao"/>
     </bean>
 </beans>
