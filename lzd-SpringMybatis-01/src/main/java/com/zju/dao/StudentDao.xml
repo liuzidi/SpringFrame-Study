@@ -14,6 +14,4 @@
     <select id="selectAll" resultMap="StudentMap">
         select * from employee
     </select>
-
-
 </mapper>
