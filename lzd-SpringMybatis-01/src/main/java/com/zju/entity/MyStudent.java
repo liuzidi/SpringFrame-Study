@@ -1,4 +1,4 @@
-package com.zju.dao;
+package com.zju.entity;
 
 /**
  * @author:liuzidi

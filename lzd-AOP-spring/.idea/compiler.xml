@@ -22,7 +22,7 @@
       <module name="lzd-mybatis01 (1)" target="1.8" />
       <module name="lzd-mybatis02-DSQL" target="1.8" />
       <module name="lzd-spring-mybatis-01" target="8" />
-      <module name="lzd-SpringMybatis-01" target="1.7" />
+      <module name="lzd-SpringMybatis-01" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
