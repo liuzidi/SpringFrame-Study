@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--mybatis 主配置文件-->
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!--    控制mybatis全局行为-->
+
+    <settings>
+<!--        控制mybatis日志-->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+
+    </settings>
+
+<!--    别名-->
+    <typeAliases>
+        <typeAlias type="com.zju.entity.Employee" alias="emp"/>
+    </typeAliases>
+<!--
+环境配置：数据库的连接信息
+默认访问的数据库名称 default
+-->
+    <environments default="myDev02">
+<!--        数据库信息的配置，环境，id自定义-->
+<!--        employee所在的数据库-->
+        <environment id="myDev01">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/db"/>
+                <property name="username" value="root"/>
+                <property name="password" value="1717"/>
+            </dataSource>
+        </environment>
+<!--        备用数据库           -->
+        <environment id="myDev02">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/db?characterEncoding=utf-8"/>
+                <property name="username" value="root"/>
+                <property name="password" value="1717"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+<!--    sql mapper的位置
+因为对应的xml文件中记录着对应的sql语句
+从类路径开始ide路径信息，target/classes(类路径)
+-->
+    <mappers>
+        <mapper resource="com/zju/dao/EmployeeDao.xml"/>
+    </mappers>
+</configuration>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    声明数据源，通过IoP用来连接druid数据库连接池-->
+    <bean id="myDatasource" class="com.alibaba.druid.pool.DruidDataSource"
+          init-method="init" destroy-method="close">
+<!--        这些都是阿里Druid的DruidDataSource用set注入以及写好的接口，setUrl，setUsername等-->
+        <property name="url" value="jdbc:mysql://localhost:3306/db?characterEncoding=utf-8"/>
+        <property name="username" value="root"/>
+        <property name="password" value="1717"/>
+        <property name="maxActive" value="20"/>
+    </bean>
+
+<!--   声明Mybatis提供得到SqlSessionFactoryBean类，利用IoP创建sqlSessionFactory的对象-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+<!--        set注入，将数据库连接池付给dataSource属性-->
+        <property name="dataSource" ref="myDatasource"/>
+<!--        mybatis主配置文件的位置
+            configLocation属性是Resource类型的，读取配置文件，value中使用classPath：表示文件的位置-->
+        <property name="configLocation" value="classpath:mybatis.xml"/>
+    </bean>
+
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+<!--        指定sqlSessionFactory对象的id-->
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+<!--        指定包名，包名为dao接口所在的包名
+            MapperScannerConfigurer会扫描这个包所有的接口，每个接口执行一次getMapper()方法得到dao对象，并存放在spring容器中
+得到的对象为接口的小写形式
+-->
+        <property name="basePackage" value="com.zju.dao"/>
+    </bean>
+
+<!--    自定义Bean-->
+    <bean id="studentService" class="com.zju.service.impl.StudentServiceImpl">
+        <property name="studentDao" ref="studentDao"/>
+    </bean>
+</beans>
