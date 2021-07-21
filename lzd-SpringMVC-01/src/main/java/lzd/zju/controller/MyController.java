@@ -26,8 +26,8 @@ public class MyController {
         mv.addObject("msg","welcome to use springmvc dev");
         mv.addObject("fun","using doSome method");
         //指定视图，指定视图的完整路径,路径为WEB-INF下的相对路径
-        //框架对视图进行forward操作，request.getRequestDispather("/show.jsp").forward(...)
-        mv.setViewName("/show.jsp");
+        //框架对视图进行forward操作，request.getRequestDispatcher("/show.jsp").forward(...)
+        mv.setViewName("show");
         return mv;
     }
 }

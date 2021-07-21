@@ -6,4 +6,11 @@
 
 <!--    申明组件扫描器-->
     <context:component-scan base-package="lzd.zju.controller"/>
+<!--    视图解析器-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+<!--        前缀-->
+        <property name="prefix" value="/WEB-INF/view/"/>
+<!--        后缀-->
+        <property name="suffix" value=".jsp"/>
+    </bean>
 </beans>
