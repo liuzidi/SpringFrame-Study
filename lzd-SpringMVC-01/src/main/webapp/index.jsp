@@ -5,7 +5,7 @@
 </head>
 <body>
     <p>springMVC的项目</p>
-    <p><a href="some.do">发起some.do请求</a> </p>
+    <p><a href= "some.do">发起some.do请求</a> </p>
     <form action="first.do" method="get">
         <input type="submit" value="get请求first.do">
     </form>
