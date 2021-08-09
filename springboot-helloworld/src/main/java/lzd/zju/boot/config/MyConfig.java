@@ -17,7 +17,7 @@ public class MyConfig {
     }
 
     @Bean
-    public Pet tomCat(){
-        return new Pet("tomCat");
+    public Pet tom(){
+        return new Pet("tom");
     }
 }
