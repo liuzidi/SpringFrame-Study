@@ -9,7 +9,6 @@
         <module name="lzd-01-spring" />
         <module name="lzd-mybatis02-DSQL" />
         <module name="lzd-mybatis01" />
-        <module name="lzd-Spring-Transaction" />
         <module name="lzd-hello-spring" />
         <module name="lzd-SpringMybatis-01" />
         <module name="lzd-AOP-spring" />
